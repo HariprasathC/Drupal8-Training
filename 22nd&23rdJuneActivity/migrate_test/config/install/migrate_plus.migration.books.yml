@@ -1,0 +1,13 @@
+id: books
+label: Books
+migration_group: migrate_test
+source:
+  plugin: books
+  key: default
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+    plugin: default_value
+    default_value: tags
+  name: name

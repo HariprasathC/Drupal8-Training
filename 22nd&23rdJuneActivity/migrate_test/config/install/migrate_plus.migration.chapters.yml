@@ -1,0 +1,21 @@
+id: chapters
+label: Chapters
+migration_group: migrate_test
+source:
+  plugin: chapters
+  key: default
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: article
+  title: name
+  body: description
+  field_tags:
+    plugin: migration
+    migration: books
+    source: books
+migration_dependencies:
+  required:
+    - books

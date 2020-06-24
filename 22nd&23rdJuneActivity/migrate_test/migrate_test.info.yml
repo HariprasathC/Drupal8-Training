@@ -1,0 +1,5 @@
+name: 'migrate_test'
+type: module
+description: 'Drupal Migration Test Example'
+core: 8.x
+package: 'Custom'
