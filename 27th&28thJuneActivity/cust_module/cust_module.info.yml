@@ -1,0 +1,9 @@
+name: cust module
+description: 'Custom module for new module'
+type: module
+package: custom
+# core: '8.x'
+configure: cust_module.configuration
+version: '8.x-1.2'
+core: '8.x'
+project: 'example'

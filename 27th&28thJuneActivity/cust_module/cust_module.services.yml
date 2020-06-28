@@ -1,0 +1,5 @@
+services:
+  cust_module.custevent_subcriber:
+    class: Drupal\cust_module\EventSubscriber\CustModuleEventSubScriber
+    tags:
+      - { name: 'event_subscriber' }

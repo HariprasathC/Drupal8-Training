@@ -1,0 +1,58 @@
+<?php
+
+
+function cust_module_schema() {
+$schema['user_reg'] = array(
+    'description' => 'Save Details',
+    
+    'fields' => array(
+        'id' => array(
+        'description' => 'The primary identifier for a node.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE),
+      
+      'first_name' => array(
+        'description' => 'First name.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE),
+      
+      'last_name' => array(
+        'description' => 'last name',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE),
+      
+      'bio' => array(
+        'description' => 'bio',
+        'type' => 'text',
+        'not null' => FALSE),
+      
+      'gender' => array(
+        'description' => 'gender',
+        'type' => 'varchar',
+        'length' => '10',
+        'not null' => FALSE),
+		
+	  'interest' => array(
+        'description' => 'interest',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE),
+    ),  
+    
+    'primary key' => array('id'),
+    
+  );
+  return $schema;
+ }
+
+function cust_module_install() {
+
+  drupal_install_schema('user_reg');
+}
+
+function cust_module_uninstall() {
+  drupal_uninstall_schema('user_reg');
+}

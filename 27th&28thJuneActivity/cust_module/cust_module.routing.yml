@@ -1,0 +1,14 @@
+cust_module.cust_module_add:
+  path: /new_form
+  defaults:
+    _form: 'Drupal\cust_module\Form\CustomFormSubmission'
+    _title: 'New Form'
+  requirements:
+    _permission: 'access content'
+    
+cust_module.module_setting:
+  path: '/configSetting'
+  defaults:
+     _controller: Drupal\cust_module\Controller\CustModuleController::setting
+  requirements:
+    _permission: 'access content'   
