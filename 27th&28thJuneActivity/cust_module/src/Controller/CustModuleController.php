@@ -7,34 +7,19 @@ class CustModuleController extends ControllerBase{
 
 	public function setting(){
 
-		$configs= \Drupal::service('config.factory')->listAll($prefix = "system");
+		$systemconfig = \Drupal::service('config.factory')->listAll($prefix = "system");
 
-		$rows = [];
-		$headers = [
-		$this->t('id'),
-		$this->t('filename'),
 
-		];
-		$output=array();
-		$a=1;
-		foreach($configs as $k=>$data){
+		foreach($systemconfig as $key=>$data){
 
-      
-
-			$output[] = [
-			'id' => $a,
-			'filename' => $configs[$k],
-			];
-			$a++;
+			$modcontent .= $systemconfig[$key].'<br>';
 		}
 	
-		 $content['table'] = [
-              '#type' => 'table',
-              '#header' => $headers,
-              '#rows' => $output,
-              '#empty' => t('No users found'),
-          ];
-          return $content;
+		  return array(
+			'#title' => 'Configuration Systme value',
+			'#markup' =>  $modcontent
+		);
+
 	}
 
 }
